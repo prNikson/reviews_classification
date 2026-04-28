@@ -1,0 +1,18 @@
+batch_size: 16
+max_len: 256
+num_classes: 2
+
+device: "cuda"
+learning_rate: 0.00002
+weight_decay: 0.01
+num_epochs: 3
+warmup_ratio: 0.1
+gradient_clip: 1.0
+
+wandb_project: "review_analysis"
+
+dataset_path: "data/imdb_dataset.csv"
+
+transformer_name: "distilbert-base-uncased"
+
+models_save_path: "resuls_models"

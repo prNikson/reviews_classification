@@ -7,9 +7,13 @@ dropout: 0.3
 num_classes: 2
 
 learning_rate: 1e-3
-num_epochs: 10
+num_epochs: 20
 device: "cuda"
 
 wandb_project: "review_analysis"
 
 dataset_path: "data/imdb_dataset.csv"
+
+transformer_name: "distilbert-base-uncased"
+
+models_save_path: "result_models"
