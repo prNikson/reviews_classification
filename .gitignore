@@ -10,3 +10,4 @@ wheels/
 .venv
 
 src/wandb
+result_models/
