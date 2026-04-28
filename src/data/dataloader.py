@@ -9,7 +9,7 @@ def get_dataloaders(cfg):
     batch_size = cfg['batch_size']
     max_len = cfg['max_len']
 
-    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+    tokenizer = AutoTokenizer.from_pretrained(cfg["transformer_name"])
 
     train_texts, val_texts, train_labels, val_labels = split_dataset(cfg)
 

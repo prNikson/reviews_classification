@@ -30,5 +30,5 @@ class IMDBDataset(Dataset):
         return {
             "input_ids": input_ids,
             "attention_mask": attention_mask,
-            "labels": torch.tensor(label)
+            "labels": torch.tensor(label, dtype=torch.long)
         }
