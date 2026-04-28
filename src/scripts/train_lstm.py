@@ -3,8 +3,8 @@ from models.lstm_model import LSTMClassifier
 from data.dataloader import get_dataloaders
 from training.trainer import Trainer
 
-def train():
-    cfg = get_config('configs/config.yaml')
+def train(config_path):
+    cfg = get_config(config_path)
 
     train_loader, val_loader, tokenizer = get_dataloaders(cfg)
 
