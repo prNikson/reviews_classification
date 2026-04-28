@@ -1,0 +1,15 @@
+max_len: 512
+batch_size: 32
+
+embedding_dim: 300
+hidden_dim: 128
+dropout: 0.3
+num_classes: 2
+
+learning_rate: 1e-3
+num_epochs: 10
+device: "cuda"
+
+wandb_project: "review_analysis"
+
+dataset_path: "data/imdb_dataset.csv"

@@ -1,0 +1,13 @@
+{
+  "os":  "Linux-5.15.0-176-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.12.13",
+  "startedAt":  "2026-04-28T10:40:59.423593Z",
+  "program":  "/home/ubuntu/analyse_review/src/main.py",
+  "codePath":  "src/main.py",
+  "codePathLocal":  "main.py",
+  "email":  "sergionik03@gmail.com",
+  "root":  "/home/ubuntu/analyse_review/src",
+  "host":  "vm5225",
+  "executable":  "/home/ubuntu/analyse_review/.venv/bin/python3",
+  "writerId":  "td4rxu2vzekkf98d6ehr3004bxa9vnub"
+}

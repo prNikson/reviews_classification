@@ -1,0 +1,60 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            7tbhr22ldxozy3q98re05r0yqeezjzna:
+                codePath: src/main.py
+                codePathLocal: main.py
+                email: sergionik03@gmail.com
+                executable: /home/ubuntu/analyse_review/.venv/bin/python3
+                host: vm5225
+                os: Linux-5.15.0-176-generic-x86_64-with-glibc2.35
+                program: /home/ubuntu/analyse_review/src/main.py
+                python: CPython 3.12.13
+                root: /home/ubuntu/analyse_review/src
+                startedAt: "2026-04-28T10:39:36.909900Z"
+                writerId: 7tbhr22ldxozy3q98re05r0yqeezjzna
+        m: []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+            "3":
+                - 16
+            "4": 3.12.13
+            "5": 0.26.1
+            "6": 5.6.2
+            "12": 0.26.1
+            "13": linux-x86_64
+batch_size:
+    value: 32
+dataset_path:
+    value: data/imdb_dataset.csv
+device:
+    value: cuda
+dropout:
+    value: 0.3
+embedding_dim:
+    value: 300
+hidden_dim:
+    value: 128
+learning_rate:
+    value: "1e-3"
+max_len:
+    value: 512
+num_classes:
+    value: 2
+num_epochs:
+    value: 10
+wandb_project:
+    value: review_analysis
