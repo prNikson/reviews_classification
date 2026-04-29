@@ -63,7 +63,7 @@ class Trainer:
 
             log_metrics({
                 "epoch": epoch + 1,
-                "train/loss": train_loss,
+                "train/loss": train_loss / len(self.train_loader),
                 "val/loss": val_loss,
                 "val/accuracy": val_acc,
                 "val/f1_score": val_f1,
