@@ -1,11 +1,11 @@
 batch_size: 16
-max_len: 256
+max_len: 512
 num_classes: 2
 
 device: "cuda"
 learning_rate: 0.00002
 weight_decay: 0.01
-num_epochs: 3
+num_epochs: 4
 warmup_ratio: 0.1
 gradient_clip: 1.0
 
@@ -15,4 +15,4 @@ dataset_path: "data/imdb_dataset.csv"
 
 transformer_name: "distilbert-base-uncased"
 
-models_save_path: "resuls_models"
+models_save_path: "result_models"
