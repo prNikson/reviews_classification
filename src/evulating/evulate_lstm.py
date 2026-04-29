@@ -4,13 +4,11 @@ from configs.get_config import get_config
 from models.lstm_model import LSTMClassifier
 from data.dataloader import get_dataloaders
 
-def evulate(config_path: str, model_path: str):
+def evulate(config_path: str, model_path: str, input_text: str) -> tuple[int, float]:
     cfg = get_config(config_path)
     device = cfg['device']
 
     _, _, tokenizer = get_dataloaders(cfg)
-
-    input_text = input()
 
     encoding = tokenizer(
         input_text,
@@ -36,4 +34,4 @@ def evulate(config_path: str, model_path: str):
         predict = torch.argmax(probs, dim=1).item()
         confidence = probs[0][predict].item()
 
-    print(predict, confidence)
+    return predict, confidence
