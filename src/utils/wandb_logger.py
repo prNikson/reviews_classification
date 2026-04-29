@@ -1,5 +1,4 @@
 import wandb
-from training.config import Config
 
 def init_wandb(cfg, model):
     wandb.init(
