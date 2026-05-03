@@ -17,11 +17,11 @@ class Trainer:
         self.optimizer = optim.AdamW(
             self.model.parameters(), 
             lr=self.lr,
-            weight_decay=cfg.get('weight_decay', 0.01)
+            weight_decay=cfg['weight_decay']
         )
         
         total_steps = len(train_loader) * self.num_epochs
-        warmup_steps = int(cfg.get('warmup_ratio', 0.1) * total_steps)
+        warmup_steps = int(cfg['warmup_ratio'] * total_steps)
         self.scheduler = get_linear_schedule_with_warmup(
             self.optimizer,
             num_warmup_steps=warmup_steps,
@@ -36,7 +36,7 @@ class Trainer:
         self.device = cfg['device']
         self.lr = float(cfg['learning_rate'])
         self.num_epochs = cfg['num_epochs']
-        self.gradient_clip = cfg.get('gradient_clip', 1.0)
+        self.gradient_clip = cfg['gradient_clip']
         self.save_path = cfg['models_save_path']
 
     def train_epoch(self) -> tuple:
