@@ -1,7 +1,7 @@
 from configs.get_config import get_config
 from models.lstm_model import LSTMClassifier
 from data.dataloader import get_dataloaders
-from training.trainer import Trainer
+from training.trainer_lstm import Trainer
 
 def train(config_path='configs/config.yaml'):
     cfg = get_config(config_path)
