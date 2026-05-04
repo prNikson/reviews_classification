@@ -8,7 +8,7 @@ def train(config_path='configs/config_lstm.yaml'):
 
     train_loader, val_loader, tokenizer = get_dataloaders(cfg)
 
-    model = LSTMClassifier(tokenizer.vocab_size, cfg).to(cfg['device'])
+    model = LSTMClassifier(tokenizer.vocab_size, cfg, bidirectional=cfg['bidirectional']).to(cfg['device'])
 
     trainer = Trainer(model, train_loader, val_loader, cfg)
     trainer.train()
