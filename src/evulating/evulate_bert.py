@@ -1,5 +1,5 @@
 import torch
-from transformers import DistilBertForSequenceClassification
+from transformers import BertForSequenceClassification, DistilBertForSequenceClassification
 
 from configs.get_config import get_config
 from data.dataloader import get_dataloaders
@@ -21,14 +21,24 @@ def evulate(config_path: str, model_path: str, input_text: str) -> tuple[int, fl
     input_ids = encoding['input_ids'].to(device)
     attention_mask = encoding['attention_mask'].to(device)
 
-    model = DistilBertForSequenceClassification.from_pretrained(
-        "distilbert-base-uncased",
-        num_labels=cfg['num_classes']
-    )
+    if cfg['transformer_name'].startswith("bert"):
+        bert_model = "bert-base-uncased"
+        model = BertForSequenceClassification(
+            bert_model,
+            num_labels=cfg.get('num_classes', 2)
+        ).to(device)
+    
+    else:
+        distilbert_model = "distilbert-base-uncased"
+        model = DistilBertForSequenceClassification(
+            distilbert_model,
+            num_labels=cfg.get('num_classes', 2)
+        ).to(device)
 
     model.load_state_dict(
-        torch.load(model_path, map_location='cpu')['model_state_dict']
+        torch.load(model_path)['model_state_dict']
     )
+
     model.to(device)
 
     model.eval()
