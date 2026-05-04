@@ -12,7 +12,8 @@ device: "cuda"
 
 wandb_project: "review_analysis"
 
-dataset_path: "data/imdb_dataset.csv"
+train_dataset_path: "dataset/imdb_dataset.csv"
+test_dataset_path: "dataset/hybrid_dataset.csv"
 
 transformer_name: "bert-base-uncased"
 
