@@ -3,7 +3,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("action", help="train, evulate or compare")
-parser.add_argument("--model_arch", help="lstm, bert or None")
+parser.add_argument("--model_arch", help="lstm, bert")
 parser.add_argument("--config_file")
 parser.add_argument("--model_path")
 
@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 if args.action == "compare":
     from evulating.compare_models import compare_models
-    compare_models("configs/config.yaml")
+    compare_models("configs/config_lstm.yaml")
 
 if args.model_arch == "lstm":
     from scripts.train_lstm import train
