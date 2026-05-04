@@ -45,7 +45,7 @@ def test_lstm(cfg):
     
     start_time = time.time()
 
-    model = LSTMClassifier(tokenizer.vocab_size, cfg).to(device)
+    model = LSTMClassifier(tokenizer.vocab_size, cfg, bidirectional=cfg['bidirectional']).to(device)
     model.load_state_dict(torch.load(cfg['models_save_path'] + '/lstm_model_20.pt')['model_state_dict'])
 
     model.eval()
