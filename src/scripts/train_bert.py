@@ -1,4 +1,4 @@
-from transformers import DistilBertForSequenceClassification, DistilBertTokenizer
+from transformers import DistilBertForSequenceClassification, BertForSequenceClassification
 import torch
 
 from configs.get_config import get_config
@@ -11,10 +11,19 @@ def train(config_path='configs/config_bert.yaml'):
 
     train_loader, val_loader, tokenizer = get_dataloaders(cfg)
 
-    model = DistilBertForSequenceClassification.from_pretrained(
-        cfg['transformer_name'],
-        num_labels=cfg['num_classes']
-    ).to(cfg['device'])
+    if cfg['transformer_name'].startswith("bert"):
+        bert_model = "bert-base-uncased"
+        model = BertForSequenceClassification.from_pretrained(
+            bert_model,
+            num_labels=cfg.get('num_classes', 2)
+        ).to(cfg['device'])
+    
+    else:
+        distilbert_model = "distilbert-base-uncased"
+        model = DistilBertForSequenceClassification.from_pretrained(
+            distilbert_model,
+            num_labels=cfg.get('num_classes', 2)
+        ).to(cfg['device'])
 
     trainer = Trainer(model, train_loader, val_loader, cfg)
     trainer.train()
