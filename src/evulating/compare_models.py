@@ -20,7 +20,7 @@ from data.dataset import IMDBDataset
 from configs.get_config import get_config
 from models.lstm_model import LSTMClassifier
 
-def read_dataset(test_dataset_path="evulating/hybrid_dataset.csv"):
+def read_dataset(test_dataset_path="dataset/hybrid_dataset.csv"):
     df = pd.read_csv(test_dataset_path)
 
     texts = df['review'].tolist()
