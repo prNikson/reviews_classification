@@ -1,4 +1,4 @@
-# Sentiment Analysis Comparison: LSTM vs DistilBERT vs BERT
+# Sentiment Analysis Comparison: LSTM vs BiLSTM vs DistilBERT vs BERT
 
 <div align="center">
 
