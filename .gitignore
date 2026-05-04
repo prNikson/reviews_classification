@@ -12,5 +12,5 @@ wheels/
 src/wandb
 result_models/
 
-evulating/hybrid_dataset.csv
-data/imdb_dataset.csv
+dataset/hybrid_dataset.csv
+dataset/imdb_dataset.csv

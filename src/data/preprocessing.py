@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def split_dataset(cfg):
-    df = pd.read_csv(cfg['dataset_path'])
+    df = pd.read_csv(cfg['train_dataset_path'])
     
     df['sentiment'] = df['sentiment'].replace({'positive': 1, 'negative': 0})
 
